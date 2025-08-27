@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro materiais</title>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <h3>Cadastro de novos materiais de aula</h3>
+            <fieldset>
+                <legend>Lista de materiais já cadastrados</legend>
+
+                <ol>
+                    <li>Lápis</li>
+                    <li>Caneta</li>
+                    <li>Papel</li>
+                    <li>Tesoura</li>
+                </ol>
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>Cadastrar novo material</legend>
+                <input type="text" id="nome" placeholder="Nome" required>
+                <br>
+                <input type="text" id="preco" placeholder="Preço" required>
+                <br>
+                <label for="qtd">Quantidade: </label>
+                <input type="number" min="0" id="qtd" required>
+                <br>
+                <label for="qtd">Devolução: </label>
+                <input type="radio" name="cont">Sim
+                <input type="radio" name="conf">Não
+                <br>
+                <input type="reset" value="Limpar">
+                <input type="submit" value="Cadastrar">
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>Dados do último material cadastrado</legend>
+                <table border="1"> 
+                    <tr> 
+                        <th>Nome</th> 
+                        <td>Lápis</td>
+                    </tr>
+                    <tr>
+                        <th>Preço</th> 
+                        <td>R$ 12,30</td>
+                    </tr>
+                    <tr>
+                        <th>Quantidade</th>
+                        <td>200</td>>
+                    </tr>
+                    <tr>
+                        <th>Devolução</th>
+                        <td>Sim</td>
+                    </tr>
+                </table>
+            </fieldset>
+        </fieldset>
+    </form>
+
+</body>
+
+</html>

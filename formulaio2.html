@@ -9,64 +9,89 @@
 
 <body>
     <h1>Formulários</h1>
+
+    <nav>
+        <ul>
+            <li><a href="">Link 1</a></li>
+            <li><a href="">Link 2</a></li>
+            <li><a href="">Link 3</a></li>
+            <li><a href="">Link 4</a></li>
+        </ul>
+    </nav>
+
     <form action="">
-        <label for="nome">Nome: </label>
-        <input type="text" id="nome" placeholder="Digita o nome ai man..." required>
-        <br>
-        <label for="email">Email: </label>
-        <input type="email" id="email" placeholder="Bota o email ai pls..." required>
-        <br>
-        <label for="senha">Senha: </label>
-        <input type="password" id="senha" placeholder="Vê se ninguém tá vendo kk" required>
-        <br><br>
+        <fieldset>
+            <legend>Formulário</legend>
 
-        <input type="radio" name="frutas">Manga
-        <input type="radio" name="frutas">Kiwi
-        <input type="radio" name="frutas">Abacate
-        <br><br>
+            <label for="nome">Nome: </label>
+            <input type="text" id="nome" placeholder="Digita o nome ai man..." required>
+            <br>
+            <label for="email">Email: </label>
+            <input type="email" id="email" placeholder="Bota o email ai pls..." required>
+            <br>
+            <label for="senha">Senha: </label>
+            <input type="password" id="senha" placeholder="Vê se ninguém tá vendo kk" required>
+            <br><br>
 
-        <input type="checkbox" name="Netflix">Netflix
-        <input type="checkbox" name="GloboPlay">Globo Play
-        <input type="checkbox" name="ApplePlay">Apple Play
-        <br><br>
+            <input type="radio" name="frutas">Manga
+            <input type="radio" name="frutas">Kiwi
+            <input type="radio" name="frutas">Abacate
+            <br><br>
 
-        <input type="date">
-        <input type="time">
-        <br><br>
+            <input type="checkbox" name="Netflix">Netflix
+            <input type="checkbox" name="GloboPlay">Globo Play
+            <input type="checkbox" name="ApplePlay">Apple Play
+            <br><br>
 
-        <input type="color" >
-        <br><br>
+            <input type="date">
+            <input type="time">
+            <br><br>
 
-        <input type="file">
-        <br><br>
+            <input type="color">
+            <br><br>
 
-        <input type="image" src="Imagens/Cavalo.png">
-        <br><br>
+            <input type="file">
+            <br><br>
 
-        <input type="range" name="range" id="range">
-        <br><br>
+            <input type="image" src="Imagens/Cavalo.png">
+            <br><br>
 
-        <input type="number">
-        <br><br>
+            <input type="range" name="range" id="range">
+            <br><br>
 
-        <textarea cols="50" rows="5"></textarea>
-        <br><br>
+            <input type="number">
+            <br><br>
 
-        <select>
-            <option value="">opção 1</option>
-            <option value="">opção 2</option>
-            <option value="">opção 3</option>
-        </select>
-        <br><br>
-        
-        <!-- <br><br> -->
-        <input type="submit" value="Enviar">
-        <br><br>
-        <input type="reset" value="Limpar a Tela">
+            <textarea cols="50" rows="5"></textarea>
+            <br><br>
+
+            <select>
+                <option value="">opção 1</option>
+                <option value="">opção 2</option>
+                <option value="">opção 3</option>
+            </select>
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <div style="text-align: center;">
+                <input type="submit" value="Enviar">
+                <br><br>
+                <input type="reset" value="Limpar a Tela">
+            </div>
+        </fieldset>
+
     </form>
 
-
-
+    <script>
+        /*
+            numero1 = "<3"
+            for(x = 1; x <= 3; x++)
+            {
+                 alert("Seja bem vindo! " + numero1 + "  Parte: " + x);
+            }
+        */
+    </script> 
 </body>
 
 </html>
