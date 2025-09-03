@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+
+    <!-- CSS externo -->
+    <link href="css/style.css" rel="style">
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+    <!-- CSS interno -->
+    <!-- as prioridades são: (Inline > Interno > Externo) -->
+
+    <!-- está mudando todos os "h1" e tags determinadas para aquilo que estou declarando, nesse caso cores
+    (o primeiro h1 não está mudando, já que a cor está declarada dentro dele, assim formando uma prioridade)-->
+
+    <!-- "*" é uma tag universal, vai mudar tudo que já não esteja com uma prioridade mais alta -->
+
+    <!-- "#" cria um Id onde você pode atribuir para suas tags -->
+
+    <!-- "." cria uma Classe onde você pode atribuir para um grupo de tags como mostrado abaixo -->
+    <style>
+        * {
+            font-size: 18px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        h1 {
+            color: palevioletred;
+        }
+
+        p {
+            color: crimson;
+        }
+
+        #titulo {
+            background-color: beige;
+        }
+
+        .titulo2 {
+            background-color: bisque;
+        }
+
+        .paragrafo {
+            background-color: red;
+        }
+
+        #paragrafo {
+            background-color: brown;
+        }
+
+        /* Pipoca com sal */
+    </style>
+</head>
+
+<body>
+    <!-- inline -->
+    <h1 style="color: pink; font-size: 35px; font-family:'Courier New', Courier, monospace;">CSS - Cascading Style
+        Sheets</h1>
+
+    <!-- interno -->
+    <h1>Primeira aula de CSS</h1>
+
+    <p id="titulo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aliquam quasi dolore quis
+        necessitatibus eos
+        repudiandae cumque. Laboriosam sequi tenetur culpa ea deleniti consectetur quo explicabo. Natus accusantium
+        exercitationem delectus?</p>
+
+    <h1 class="titulo2">Primeira aula de CSS</h1>
+
+    <p class="titulo2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aliquam quasi dolore quis
+        necessitatibus eos
+        repudiandae cumque. Laboriosam sequi tenetur culpa ea deleniti consectetur quo explicabo. Natus accusantium
+        exercitationem delectus?</p>
+
+    <hr>
+
+    <!-- aqui demonstra as Prioridades-->
+    <p id="paragrafo" class="paragrafo" style="background-color:chocolate;">Especifidades do CSS</p>
+    <!-- Prioridade (Id > Classe) -->
+    <p id="paragrafo" class="paragrafo">Especifidades do CSS</p>
+    <p class="paragrafo">Especifidades do CSS</p>
+
+    <hr>
+
+</body>
+
+</html>
