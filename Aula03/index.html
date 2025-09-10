@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+</head>
+
+<style>
+    body {
+        text-align: center;
+    }
+
+    .bloco1, .bloco2, .bloco3, .bloco4 {
+        display: inline-block;
+        height: 150px;
+        width: 150px;
+    }
+
+    .bloco1 {
+        background-color: #ff00ff;
+    }
+
+    .bloco2 {
+        background-color: #0044cc;
+        position: relative; /* Muda a posição com base na posição original do elemento */
+        top: 80px;
+        left: -50px;
+        z-index: 5; /* Faz o elemento ficar em cima de um outro, o elemento com um valor menor no "z-index" fica abaixo */
+    }
+
+    .bloco3 {
+        background-color: #ffdd00;
+        opacity: 50%;
+        position: absolute; /* Muda a posição com base da pagina */
+        top: 180px;
+        left: 200px;
+    }
+
+    .bloco4 {
+        background-color: green;
+        opacity: 25%;
+        position: fixed; /* Fixa a posição no canto da pagina, faz o elemento acompanhar o fluxo d pagina */
+
+    }
+
+    img {
+        float: right; /* Faz o elemento flutuar ao redor dos demais elementos */
+    }
+
+    .paragrafoBaixo, .paragrafoBaixo2 {
+        clear: right; /* Está cancelando a ação do "Float" posto em "img" */
+    }
+</style>
+
+<body>
+    <div class="bloco1">
+        Bloco 1
+    </div>
+    <div class="bloco2">
+        Bloco 2
+    </div>
+    <div class="bloco3">
+        Bloco 3
+    </div>
+    <div class="bloco4">
+        Bloco 4
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, esse nam, consequuntur provident necessitatibus quae
+        sequi tempore saepe totam voluptate pariatur nihil harum cumque vitae neque est dicta incidunt hic?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui maxime nobis cumque, doloribus, tenetur quia,
+        error nemo rem perferendis magnam vero eligendi saepe cum voluptatibus amet eum distinctio. Iure, sunt!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis praesentium error rerum aperiam
+        perspiciatis incidunt velit? Blanditiis sint odit, totam maiores amet doloremque ab fugit asperiores voluptate
+        obcaecati harum ipsam.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ipsum? Unde deserunt ut distinctio nisi
+        architecto optio quo earum. Nisi dolores rem laboriosam nulla ab voluptatem doloremque ullam amet vitae.</p>
+
+    <img src="Cavalo.png" alt="">
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, esse nam, consequuntur provident necessitatibus quae
+        sequi tempore saepe totam voluptate pariatur nihil harum cumque vitae neque est dicta incidunt hic?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui maxime nobis cumque, doloribus, tenetur quia, error
+        nemo rem perferendis magnam vero eligendi saepe cum voluptatibus amet eum distinctio. Iure, sunt!</p>
+    <p class="paragrafoBaixo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis praesentium error
+        rerum aperiam perspiciatis incidunt velit? Blanditiis sint odit, totam maiores amet doloremque ab fugit
+        asperiores voluptate obcaecati harum ipsam.</p>
+    <p class="paragrafoBaixo2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ipsum? Unde deserunt ut
+        distinctio nisi architecto optio quo earum. Nisi dolores rem laboriosam nulla ab voluptatem doloremque ullam
+        amet vitae.</p>
+
+    ~continue aqui~
+
+</body>
+
+</html>
