@@ -9,25 +9,55 @@
 
 <style>
     * {
-        font-family:'Times New Roman';
+        font-family: 'Times New Roman';
+        font-weight: bold;
     }
+
     fieldset {
-        border-color:rgb(25, 206, 25);
+        border-color: rgb(25, 206, 25);
         background-color: rgb(194, 255, 182);
     }
 
     legend {
         border: 2px solid green;
         color: red;
-        background-color:rgb(247, 109, 201);
+        background-color: rgb(241, 154, 212);
+    }
+
+    table {
+        color: rgb(9, 153, 9);
+    }
+
+    .oi {
+        font-weight: normal;
+        font-family: sans-serif;
     }
 </style>
 
 <body>
     <fieldset>
         <legend>Fale Conosco</legend>
-        opa
+
+        <table>
+            <tr>
+                <td><label for="nome">Nome: </label></td>
+                <td><input type="text" id="nome" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">E-mail: </label></td>
+                <td><input type="email" id="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="msg">Mensagem:</label></td>
+                <td><textarea cols="50" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td><input class="oi" type="submit" value="Enviar"></td>
+            </tr>
+        </table>
+
     </fieldset>
+
 </body>
 
 </html>
