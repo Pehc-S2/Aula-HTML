@@ -41,6 +41,18 @@ section {
     flex: 3;
 }
 
+section h2 {
+    text-align: center;
+}
+
+.botao {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
 
 article {
     background-color: white;
@@ -48,4 +60,19 @@ article {
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-bottom: 20px;
+}
+
+article h2 {
+    text-align: left;
+}
+
+footer {
+    background-color: #3C4359;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+footer p {
+    color: white;
 }
