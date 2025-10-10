@@ -18,14 +18,22 @@
     <main>
         <section>
             <div>
-                <h2>o</h2>
+                <h2>Seleção de Materiais</h2>
                 <label>Material:
                     <select id="material">
-                        <option>Insulfilm Básico (R$100 por janela)</option>
-                        <option>Insulfilm Premium (R$150 por janela)</option>
-                        <option>Insulfilm Blindado (R$200 por janela)</option>
+                        <option value="100">Insulfilm Básico (R$100 por janela)</option>
+                        <option value="150">Insulfilm Premium (R$150 por janela)</option>
+                        <option value="175">Insulfilm Espelhado (R$175 por janela)</option>
+                        <option value="200">Insulfilm Carbono (R$200 por janela)</option>
+                        <option value="215">Insulfilm Blindado (R$215 por janela)</option>
+                        <option value="265">Insulfilm Cerâmico (R$265 por janela)</option>
                     </select>
                 </label>
+                <label>Janelas:
+                    <input id="janelas" type="number" min="1">
+                </label>
+                <br><a class="botao" onclick="calcular()">Calcular</a>
+                <p id="resultado"></p>
             </div>
         </section>
     </main>

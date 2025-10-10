@@ -44,6 +44,7 @@ table input {
 
 article {
     background-color: white;
+    text-align: center;
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -57,6 +58,7 @@ article {
     padding: 5px 10px;
     text-decoration: none;
     border-radius: 5px;
+    margin-top: 10px;
 }
 
 .v1 {
@@ -76,4 +78,5 @@ div {
     background: white;
     padding: 20px;
     border-radius: 10px;
+    text-align: center;
 }
