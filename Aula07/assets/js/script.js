@@ -23,3 +23,12 @@ novoParagrafo.innerText = "Este é um novo parágrafo";
 // e2) Adicionar o novo parágrafo ao elemento <div>
 let novaDiv = document.getElementById('novaDiv');
 novaDiv.appendChild(novoParagrafo);
+
+// Alterar atributos <a href>
+let link = document.getElementById('link');
+link.setAttribute('href', 'https://www.uol.com.br');
+console.log(link.getAttribute('href'));
+
+let paragrafo = document.getElementById('paragrafoNovo');
+paragrafo.classList.add('destaque');
+paragrafo.classList.remove('destaque');
