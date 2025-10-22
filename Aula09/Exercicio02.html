@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+    <style>      
+        span{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Revenda de Veiculos JS</h1>
+
+    <form action="">
+        <p><label for="veiculo">Veiculo:</label>
+        <input type="text" id="veiculo"></p>
+        <p><label for="preco">Preço R$:</label>
+        <input type="text" id="preco"></p>
+        <input type="button" id="botao" value="Ver Promoção">
+    </form>
+    <p><span id="msgPromocao"></span></p>
+    <p><span id="msgEntrada"></span></p>
+    <p><span id="msgParcela"></span></p>
+
+    <script>
+        function calculo(){
+            let veiculo = document.querySelector('#veiculo').value;
+            let preco = Number(document.querySelector('#preco').value);
+
+            // Calculo
+            let entrada = preco / 2;
+            let parcela = entrada / 12;
+
+            let msgPromocao = document.querySelector('#msgPromocao');
+            let msgEntrada = document.querySelector('#msgEntrada');
+            let msgParcela = document.querySelector('#msgParcela');
+
+            msgPromocao.innerText = `Promoção: ${veiculo}`;
+            msgEntrada.innerText = `Entrada de R$: ${entrada.toFixed(2)}`;
+            msgParcela.innerText = `+ 12x de R$: ${parcela.toFixed(2)}`
+        }
+
+        //Vincula o botao 
+        let botao = document.querySelector('#botao');
+        botao.addEventListener('click', function(){
+            calculo();
+        });
+    </script>
+    </body>
+
+</html>

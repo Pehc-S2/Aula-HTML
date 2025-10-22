@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+    <style>      
+        
+    </style>
+</head>
+
+<body>
+    <h1>Vídeo Locadora JS</h1>
+
+    <form action="">
+        <p><label for="titulo">Tiluto do Filme:</label>
+        <input type="text" id="titulo" ></p>
+        <p><label for="duracao">Duração (min):</label>
+        <input type="text" id="duracao"></p>
+        <input type="button" id="botao" value="Converter em Horas e Minutos">
+    </form>
+    <p><span id="msgTitulo"></span></p>
+    <p><span id="msgDuracao"></span></p>
+
+    <script>
+        function calculo(){
+            let titulo = document.querySelector('#titulo').value;
+            let duracao = Number(document.querySelector('#duracao').value);
+
+            // Calculo
+            let horas = Math.floor(duracao/60);
+            let minutos = duracao % 60;
+
+            let msgTitulo = document.querySelector('#msgTitulo');
+            let msgDuracao = document.querySelector('#msgDuracao');
+
+            msgTitulo.innerText = `Titulo: ${titulo}`;
+            msgDuracao.innerText = `Duração: ${horas} hora(s) e ${minutos} min.`;
+        }
+
+        //Vincula o botao 
+        let botao = document.querySelector('#botao');
+        botao.addEventListener('click', function(){
+            calculo();
+        });
+    </script>
+    </body>
+
+</html>
