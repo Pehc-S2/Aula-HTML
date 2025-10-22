@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+    <style>      
+        span{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Restaurante JS</h1>
+
+    <form action="">
+        <p><label for="valorQuilo">Buffet por Quilo R$:</label>
+        <input type="text" id="valorQuilo"></p>
+        <p><label for="valorGrama">Consumo do Cliente (gr):</label>
+        <input type="text" id="valorGrama"></p>
+        <input type="button" id="botao" value="Calcular Preço">
+    </form>
+    <p><span id="msgPagamento"></span></p>
+
+    <script>
+        function calculo(){
+            let valorQuilo = document.querySelector('#valorQuilo').value;
+            let valorGrama = Number(document.querySelector('#valorGrama').value);
+
+            // Calculo
+            let quilos = valorGrama / 1000;
+            let pagamento = valorQuilo * quilos;
+
+            let msgPagamento = document.querySelector('#msgPagamento');
+            
+            msgPagamento.innerText = `Promoção: ${pagamento.toFixed(2)}`;
+        }
+
+        //Vincula o botao 
+        let botao = document.querySelector('#botao');
+        botao.addEventListener('click', function(){
+            calculo();
+        });
+    </script>
+    </body>
+
+</html>
