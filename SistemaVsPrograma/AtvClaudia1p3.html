@@ -17,7 +17,7 @@
     -->
     <main>
         <section>
-            <div>
+            <div >
                 <h2>Seleção de Materiais</h2>
                 <label>Material:
                     <select id="material">
@@ -32,9 +32,22 @@
                 <label>Janelas:
                     <input id="janelas" type="number" min="1">
                 </label>
-                <br><a class="botao" onclick="calcular()">Calcular</a>
+                <br>
+                <a class="botao" onclick="calcular()">Calcular</a>
                 <p id="resultado"></p>
             </div>
+
+            <div id="agenda" style="display: none;">
+                <h2> Agende sua visita </h2>
+                <label id="agendamento" > Agendamento
+                    <input type="datetime-local", id="agendamentoInput", name="agendamento">
+                </label>
+                <br>
+                <a class="botao" onclick="agendar()">Agendar</a>
+
+
+            </div>
+
         </section>
     </main>
 
