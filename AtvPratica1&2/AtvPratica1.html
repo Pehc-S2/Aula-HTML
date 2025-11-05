@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenda Herbie</title>
+    <style>
+        span{
+            font-weight: bolder;
+        }
+
+        main {
+           display: flex;
+        }
+
+        section {
+            flex: 3;
+        }
+
+        img {
+            width: 80%;
+            float: left;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <img src="img/carrinho.jpg" alt="">
+        </section>
+        <section> 
+            <h1>Revenda Herbie - Consignados</h1><hr>
+            <form action="">
+                <p><label for="modelo">Modelo do Veículo:</label>
+                <input type="text" id="modelo" ></p>
+                <p><label for="fabricacao">Ano de Fabricação:</label>
+                <input type="text" id="fabricacao"></p>
+                <p><label for="preco">Preço Proprietario R$:</label>
+                <input type="text" id="preco"></p>
+                <input type="button" id="botao" value="Classificar/Calcular Preço">
+                <p><span id="msgFabricacao"></span></p>
+                <p><span id="msgPrecoFinal"></span></p>
+            </form>
+        </section>
+
+    </main>
+    <script>
+        function calculo(){
+        let modelo = document.querySelector('#modelo').value;
+        let fabricacao = Number(document.querySelector('#fabricacao').value);
+        let preco = Number(document.querySelector('#preco').value);
+
+        let valorFinal = 0;
+        let idade = '';
+
+        if (fabricacao >= 2025){
+            valorFinal = preco * 1.08;
+            idade = 'Novo';
+        } else if (fabricacao <= 2022){
+            valorFinal = preco * 1.10;
+            idade = 'Usado';
+        } else {
+            valorFinal = preco * 1.10;
+            idade = 'Semi Novo';
+        }
+
+        let msgFabricacao = document.querySelector('#msgFabricacao')
+        let msgPrecoFinal = document.querySelector('#msgPrecoFinal');
+
+        msgFabricacao.innerText = `${modelo} - ${idade}`;
+        msgPrecoFinal.innerText = `Preço de Venda R$: ${valorFinal.toFixed(2)}`;
+        }
+        
+        let botao = document.querySelector('#botao');
+        botao.addEventListener('click', function(){
+            calculo();
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Últimas Notícias</title>
+    <style>
+        span{
+            font-weight: bolder;
+        }
+
+        main {
+           display: flex;
+        }
+
+        section {
+            flex: 3;
+        }
+
+        img {
+            width: 80%;
+            float: left;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <!--<section>
+            <img src="" alt="">
+        </section>1-->
+        <section> 
+            <h1>Programa Últimas Notícias</h1><hr>
+            <form action="">
+                <label for="noticia">Notícias</label>
+                <input type="text" id="noticia">
+                <input type="button" id="botaoAdd" value="Adicionar">
+                <input type="button" id="botaoListar" value="Listar Últimas Notícias">
+
+                <p><span id="msgNoticias"></span></p>
+            </form>
+        </section>
+
+    </main>
+    <script>
+        var noticias = new Array();
+        function adicionar(){
+            let noticia = document.querySelector('#noticia').value;
+            noticias.push(noticia);
+        }
+
+        function listar (){
+            
+        }
+        
+        
+        let botao1 = document.querySelector('#botaoAdd');
+        botao1.addEventListener('click', function(){
+            adicionar();
+        });
+
+        let botao2 = document.querySelector('#botaoListar');
+        botao1.addEventListener('click', function(){
+            listar();
+        });
+
+    </script>
+</body>
+
+</html>
+
+<!-- Desculpe, não consehui terminar está Atv  -->
