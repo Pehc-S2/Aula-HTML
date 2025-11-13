@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+    <style>      
+        span{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Farmácia JS</h1>
+
+    <form action="">
+        <p><label for="medicamento">Medicamento:</label>
+        <input type="text" id="medicamento"></p>
+        <p><label for="preco">Preço R$:</label>
+        <input type="text" id="preco"></p>
+        <input type="button" id="botao" value="Mostrar Promoção">
+    </form>
+    <p><span id="msgPromocao"></span></p>
+    <p><span id="msgPagamento"></span></p>
+
+    <script>
+        function calculo(){
+            let medicamento = document.querySelector('#medicamento').value;
+            let preco = Number(document.querySelector('#preco').value);
+
+            // Calculo
+            let pagamento = Math.floor(preco+preco);
+
+            let msgPromocao = document.querySelector('#msgPromocao');
+            let msgPagamento = document.querySelector('#msgPagamento');
+
+            msgPromocao.innerText = `Promoção: ${medicamento}`;
+            msgPagamento.innerText = `Leve 2 por apenas R$: ${pagamento.toFixed(2)}`
+        }
+
+        //Vincula o botao 
+        let botao = document.querySelector('#botao');
+        botao.addEventListener('click', function(){
+            calculo();
+        });
+    </script>
+    </body>
+
+</html>

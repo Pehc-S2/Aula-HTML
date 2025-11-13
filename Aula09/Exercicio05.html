@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 03</title>
+    <title>Exercicio 05</title>
     <style>      
         span{
             font-weight: bolder;
@@ -16,26 +16,26 @@
     <h1>Restaurante JS</h1>
 
     <form action="">
-        <p><label for="valorQuilo">Buffet por Quilo R$:</label>
-        <input type="text" id="valorQuilo"></p>
-        <p><label for="valorGrama">Consumo do Cliente (gr):</label>
-        <input type="text" id="valorGrama"></p>
-        <input type="button" id="botao" value="Calcular Preço">
+        <p><label for="valorMinuto">Valor por 15min de Uso R$:</label>
+        <input type="text" id="valorMinuto"></p>
+        <p><label for="tempoUso">Tempo de Uso do Cliente (Min.):</label>
+        <input type="text" id="tempoUso"></p>
+        <input type="button" id="botao" value="Calcular Valor a Pagar">
     </form>
     <p><span id="msgPagamento"></span></p>
 
     <script>
         function calculo(){
-            let valorQuilo = document.querySelector('#valorQuilo').value;
-            let valorGrama = Number(document.querySelector('#valorGrama').value);
+            let valorMinuto = document.querySelector('#valorMinuto').value;
+            let tempoUso = Number(document.querySelector('#tempoUso').value);
 
             // Calculo
-            let quilos = valorGrama / 1000;
-            let pagamento = valorQuilo * quilos;
+            let bloco = Math.ceil(tempoUso / 15);
+            let valorPagamento = bloco * valorMinuto;
 
             let msgPagamento = document.querySelector('#msgPagamento');
 
-            msgPagamento.innerText = `Valor a pagar R$: ${pagamento.toFixed(2)}`;
+            msgPagamento.innerText = `Valor a pagar R$: ${valorPagamento.toFixed(2)}`;
         }
 
         //Vincula o botao 
