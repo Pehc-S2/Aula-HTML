@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo Mobile - Registro de Ocorrência</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .mobile-frame {
+            width: 375px;
+            height: 667px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #007bff; /* Cor primária */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .header .back-btn {
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .content {
+            padding: 20px;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+        .student-info {
+            background-color: #e9f5ff; /* Cor de destaque leve */
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #007bff;
+        }
+        .student-info p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+        .form-group input[type="text"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .required-star {
+            color: #dc3545; /* Cor de erro */
+            margin-left: 2px;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745; /* Cor de sucesso */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-frame">
+        <div class="header">
+            <span class="back-btn">&lt;</span>
+            <span>Nova Ocorrência</span>
+        </div>
+        <div class="content">
+            <div class="student-info">
+                <p><strong>Aluno:</strong> Maria Eduarda Silva</p>
+                <p><strong>Turma:</strong> 8º Ano B</p>
+                <p><strong>Matrícula:</strong> 123456</p>
+            </div>
+
+            <div class="form-group">
+                <label for="tipo">Tipo de Ocorrência<span class="required-star">*</span></label>
+                <select id="tipo" required>
+                    <option value="" disabled selected>Selecione o tipo</option>
+                    <option value="comportamento">Comportamento</option>
+                    <option value="atraso">Atraso</option>
+                    <option value="rendimento">Rendimento</option>
+                    <option value="material">Material</option>
+                    <option value="grave">Comportamento Grave</option>
+                    <option value="critico">Rendimento Crítico</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="descricao">Descrição<span class="required-star">*</span></label>
+                <textarea id="descricao" placeholder="Descreva a ocorrência em detalhes (mínimo 20 caracteres)" required minlength="20"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="acao">Ação Imediata Tomada</label>
+                <textarea id="acao" placeholder="Ex: Conversa individual, contato com a coordenação, etc. (Opcional)"></textarea>
+            </div>
+
+            <button class="btn-submit">Registrar Ocorrência</button>
+        </div>
+    </div>
+</body>
+</html>

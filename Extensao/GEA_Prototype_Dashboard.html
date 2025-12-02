@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo - Dashboard GEA</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+        .main-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #003366; /* Azul escuro, inspirado nas telas do usuário */
+            color: white;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .logo-area {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo-text {
+            font-size: 32px;
+            font-weight: bold;
+            color: #007bff; /* Azul claro */
+            margin-top: 10px;
+        }
+        .content-area {
+            flex-grow: 1;
+            padding: 30px;
+        }
+        .welcome-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .quick-actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .action-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid #007bff;
+        }
+        .action-card h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .action-card button {
+            padding: 10px 15px;
+            background-color: #28a745; /* Verde para ação */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .latest-occurrences {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .latest-occurrences h2 {
+            font-size: 22px;
+            color: #007bff;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .occurrence-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .occurrence-header button {
+            padding: 8px 15px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .occurrence-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .occurrence-table th, .occurrence-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        .occurrence-table th {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .occurrence-table tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+        .type-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+        .badge-comportamento { background-color: #ffc107; }
+        .badge-atraso { background-color: #17a2b8; }
+        .badge-rendimento { background-color: #dc3545; }
+        .badge-material { background-color: #6c757d; }
+        .details-btn {
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-layout">
+        <div class="sidebar">
+            <div class="logo-area">
+                <!-- Simulação do Logo GEA -->
+                <div style="width: 80px; height: 80px; background-color: #e9f5ff; border-radius: 50%; margin: 0 auto;">
+                    <img src="GEA_Logo.png" alt="GEA Logo" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div class="logo-text">GEA</div>
+            </div>
+            <!-- Menu de Navegação -->
+            <nav>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px 0; font-weight: bold; background-color: #004080; border-radius: 5px;">
+                        <a href="#" style="color: white; text-decoration: none; display: block; padding-left: 10px;">Dashboard</a>
+                    </li>
+                    <li style="padding: 10px 0;">
+                        <a href="#" style="color: white; text-decoration: none; display: block; padding-left: 10px;">Consultar Aluno</a>
+                    </li>
+                    <li style="padding: 10px 0;">
+                        <a href="#" style="color: white; text-decoration: none; display: block; padding-left: 10px;">Relatórios / Estatísticas</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content-area">
+            <h1 class="welcome-title">Bem-vindo(a), Coordenador(a) Ana!</h1>
+
+            <!-- Cards de Ação Rápida -->
+            <div class="quick-actions-grid">
+                <div class="action-card">
+                    <div>
+                        <h3>Registrar Nova Ocorrência</h3>
+                        <p style="font-size: 12px; color: #666;">Acesso rápido para Professores e Coordenadores.</p>
+                    </div>
+                    <button>Iniciar</button>
+                </div>
+                <div class="action-card" style="border-left-color: #ffc107;">
+                    <div>
+                        <h3>Consultar Aluno por Matrícula</h3>
+                        <p style="font-size: 12px; color: #666;">Busque um aluno para ver o histórico completo.</p>
+                    </div>
+                    <button style="background-color: #ffc107; color: #333;">Consultar</button>
+                </div>
+            </div>
+
+            <!-- Últimas Ocorrências Registradas -->
+            <div class="latest-occurrences">
+                <div class="occurrence-header">
+                    <h2>Últimas Ocorrências Registradas</h2>
+                    <button>Ver Todas</button>
+                </div>
+                
+                <table class="occurrence-table">
+                    <thead>
+                        <tr>
+                            <th>Data/Hora</th>
+                            <th>Aluno</th>
+                            <th>Turma</th>
+                            <th>Tipo</th>
+                            <th>Registrado Por</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01/12/2025 14:30</td>
+                            <td>João Silva</td>
+                            <td>9º Ano A</td>
+                            <td><span class="type-badge badge-comportamento">Comportamento</span></td>
+                            <td>Prof. Carlos</td>
+                            <td><button class="details-btn">Ver Detalhes</button></td>
+                        </tr>
+                        <tr>
+                            <td>01/12/2025 10:00</td>
+                            <td>Maria Cruz</td>
+                            <td>7º Ano B</td>
+                            <td><span class="type-badge badge-atraso">Atraso</span></td>
+                            <td>Coord. Ana</td>
+                            <td><button class="details-btn">Ver Detalhes</button></td>
+                        </tr>
+                        <tr>
+                            <td>30/11/2025 16:00</td>
+                            <td>Pedro Souza</td>
+                            <td>8º Ano C</td>
+                            <td><span class="type-badge badge-rendimento">Rendimento</span></td>
+                            <td>Prof. Diogo</td>
+                            <td><button class="details-btn">Ver Detalhes</button></td>
+                        </tr>
+                        <tr>
+                            <td>30/11/2025 09:15</td>
+                            <td>Luisa Mendes</td>
+                            <td>6º Ano A</td>
+                            <td><span class="type-badge badge-material">Material</span></td>
+                            <td>Prof. Jackson</td>
+                            <td><button class="details-btn">Ver Detalhes</button></td>
+                        </tr>
+                        <tr>
+                            <td>29/11/2025 11:45</td>
+                            <td>João Silva</td>
+                            <td>9º Ano A</td>
+                            <td><span class="type-badge badge-atraso">Atraso</span></td>
+                            <td>Prof. Carlos</td>
+                            <td><button class="details-btn">Ver Detalhes</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

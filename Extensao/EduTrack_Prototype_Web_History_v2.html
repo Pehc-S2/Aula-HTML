@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo Web - Histórico do Aluno</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            color: #007bff;
+            margin: 0;
+        }
+        .student-details {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .student-details h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .student-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .filter-area {
+            background-color: #e9f5ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-end;
+        }
+        .filter-area label {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .filter-area select, .filter-area input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .filter-area button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .filter-area .apply-btn {
+            background-color: #007bff;
+            color: white;
+        }
+        .filter-area .clear-btn {
+            background-color: #ccc;
+            color: #333;
+        }
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .history-table th, .history-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        .history-table th {
+            background-color: #f8f9fa;
+            color: #333;
+            font-weight: bold;
+        }
+        .history-table tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+        .type-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+        .badge-comportamento { background-color: #ffc107; }
+        .badge-atraso { background-color: #17a2b8; }
+        .badge-rendimento { background-color: #dc3545; }
+        .badge-material { background-color: #6c757d; }
+        .details-btn {
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Histórico de Ocorrências</h1>
+        </div>
+
+        <div class="student-details">
+            <h2>Maria Eduarda Silva</h2>
+            <p><strong>Matrícula:</strong> 123456 | <strong>Turma:</strong> 8º Ano B</p>
+        </div>
+
+        <div class="filter-area">
+            <div>
+                <label for="tipo-filtro">Tipo de Ocorrência</label>
+                <select id="tipo-filtro">
+                    <option value="">Todos os Tipos</option>
+                    <option value="comportamento">Comportamento</option>
+                    <option value="atraso">Atraso</option>
+                    <option value="rendimento">Rendimento</option>
+                    <option value="material">Material</option>
+                </select>
+            </div>
+            <div>
+                <label for="data-inicio">Data Início</label>
+                <input type="date" id="data-inicio">
+            </div>
+            <div>
+                <label for="data-fim">Data Fim</label>
+                <input type="date" id="data-fim">
+            </div>
+            <button class="apply-btn">Aplicar Filtro</button>
+            <button class="clear-btn">Limpar Filtros</button>
+        </div>
+
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>Data/Hora</th>
+                    <th>Tipo</th>
+                    <th>Descrição (Resumo)</th>
+                    <th>Registrado Por</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>25/11/2025 10:30</td>
+                    <td><span class="type-badge badge-atraso">Atraso</span></td>
+                    <td>Chegou 15 minutos atrasada na aula de História.</td>
+                    <td>Prof. Ana</td>
+                    <td><button class="details-btn">Ver Detalhes</button></td>
+                </tr>
+                <tr>
+                    <td>15/11/2025 14:00</td>
+                    <td><span class="type-badge badge-rendimento">Rendimento</span></td>
+                    <td>Não entregou o trabalho final de Matemática.</td>
+                    <td>Coord. Pedro</td>
+                    <td><button class="details-btn">Ver Detalhes</button></td>
+                </tr>
+                <tr>
+                    <td>01/11/2025 08:00</td>
+                    <td><span class="type-badge badge-comportamento">Comportamento</span></td>
+                    <td>Uso indevido de celular durante a aula.</td>
+                    <td>Prof. Ana</td>
+                    <td><button class="details-btn">Ver Detalhes</button></td>
+                </tr>
+                <tr>
+                    <td>20/10/2025 11:00</td>
+                    <td><span class="type-badge badge-material">Material</span></td>
+                    <td>Esqueceu o livro didático pelo terceiro dia consecutivo.</td>
+                    <td>Prof. Carlos</td>
+                    <td><button class="details-btn">Ver Detalhes</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

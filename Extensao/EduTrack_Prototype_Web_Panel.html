@@ -1,0 +1,211 @@
+<!--<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo Web - Painel do Aluno (Coordenador)</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            color: #007bff;
+            margin: 0;
+        }
+        .header .actions button {
+            padding: 8px 15px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .header .actions .chat-btn {
+            background-color: #ffc107;
+            color: #333;
+        }
+        .header .actions .plan-btn {
+            background-color: #007bff;
+            color: white;
+        }
+        .student-details {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .student-details h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .student-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+        }
+        .card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+        .risk-card {
+            background-color: #fff3f3; /* Fundo para risco */
+            border-left: 5px solid #dc3545; /* Borda vermelha para alto risco */
+        }
+        .risk-level {
+            font-size: 36px;
+            font-weight: bold;
+            color: #dc3545;
+            margin-bottom: 10px;
+        }
+        .risk-suggestion {
+            font-style: italic;
+            color: #666;
+            font-size: 14px;
+        }
+        .performance-data p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+        .performance-data strong {
+            color: #333;
+        }
+        .history-list {
+            list-style: none;
+            padding: 0;
+        }
+        .history-item {
+            border-bottom: 1px dashed #eee;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        .history-item:last-child {
+            border-bottom: none;
+        }
+        .history-item .type {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .history-item .positive {
+            color: #28a745;
+        }
+        .history-item .negative {
+            color: #dc3545;
+        }
+        .plan-status {
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .status-pending { background-color: #ffc107; color: #333; }
+        .status-progress { background-color: #007bff; color: white; }
+        .status-completed { background-color: #28a745; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Painel do Aluno - Visualização Integrada</h1>
+            <div class="actions">
+                <button class="chat-btn">Iniciar Chat</button>
+                <button class="plan-btn">Novo Plano de Ação</button>
+            </div>
+        </div>
+
+        <div class="student-details">
+            <h2>Maria Eduarda Silva</h2>
+            <p><strong>Matrícula:</strong> 123456 | <strong>Turma:</strong> 8º Ano B | <strong>Responsável:</strong> Ana Paula Silva</p>
+        </div>
+
+        <div class="dashboard-grid">
+            
+            <div class="card risk-card">
+                <h3>Índice de Risco (IA)</h3>
+                <div class="risk-level">75% - Alto Risco</div>
+                <p class="risk-suggestion">
+                    **Sugestão IA:** O histórico recente de atrasos e a queda no rendimento em Matemática sugerem a necessidade de uma reunião urgente com o responsável e o professor da disciplina.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Desempenho Acadêmico (SGE)</h3>
+                <div class="performance-data">
+                    <p><strong>Frequência:</strong> 85% (Abaixo da média)</p>
+                    <p><strong>Notas Médias:</strong></p>
+                    <ul>
+                        <li>Português: 8.5</li>
+                        <li>Matemática: 5.2 <span class="negative">(Crítico)</span></li>
+                        <li>História: 7.8</li>
+                    </ul>
+                </div>
+            </div>
+
+             Card 3: Histórico de Ocorrências e Destaques 
+            <div class="card" style="grid-column: 1 / span 2;">
+                <h3>Histórico de Ocorrências e Destaques</h3>
+                <ul class="history-list">
+                    <li class="history-item">
+                        <span class="type negative">Ocorrência (Atraso)</span> - 25/11/2025 - Chegou 15 minutos atrasada. Ação: Advertência verbal.
+                    </li>
+                    <li class="history-item">
+                        <span class="type positive">Destaque Positivo</span> - 20/11/2025 - Ajudou colega com dificuldade em projeto de Ciências. Registrado por: Prof. Carlos.
+                    </li>
+                    <li class="history-item">
+                        <span class="type negative">Ocorrência (Rendimento Crítico)</span> - 15/11/2025 - Não entregou trabalho de Matemática. Ação: Contato com Coordenador.
+                    </li>
+                </ul>
+            </div>
+
+          
+            <div class="card" style="grid-column: 1 / span 2;">
+                <h3>Planos de Ação</h3>
+                <ul class="history-list">
+                    <li class="history-item">
+                        **Plano 001:** Reunião com Responsável e Professor de Matemática.
+                        <span class="plan-status status-progress">Em Andamento</span>
+                        <p style="margin-top: 5px; color: #666;">Resultado: Reunião agendada para 01/12. Foco em reforço de conteúdo.</p>
+                    </li>
+                    <li class="history-item">
+                        **Plano 002:** Acompanhamento semanal de tarefas.
+                        <span class="plan-status status-completed">Concluído</span>
+                        <p style="margin-top: 5px; color: #666;">Resultado: Tarefas entregues na última semana. Fechado em 10/11.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>-->

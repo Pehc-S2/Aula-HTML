@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo - Consulta de Aluno</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            color: #007bff;
+            margin: 0;
+        }
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .search-box input {
+            flex-grow: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .search-box button {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .results-list {
+            list-style: none;
+            padding: 0;
+        }
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            margin-bottom: 10px;
+            border-left: 5px solid #007bff;
+        }
+        .student-info {
+            text-align: left;
+        }
+        .student-info strong {
+            font-size: 18px;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .student-info span {
+            font-size: 14px;
+            color: #666;
+        }
+        .view-button {
+            padding: 8px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Consultar Aluno (Matrícula ou Nome)</h1>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Digite a Matrícula ou o Nome do Aluno" value="Maria">
+            <button>Buscar</button>
+        </div>
+
+        <ul class="results-list">
+            <li class="result-item">
+                <div class="student-info">
+                    <strong>Maria Eduarda Silva</strong>
+                    <span>Matrícula: 123456 | Turma: 8º Ano B</span>
+                </div>
+                <button class="view-button">Ver Histórico</button>
+            </li>
+            <li class="result-item">
+                <div class="student-info">
+                    <strong>Mariana Santos</strong>
+                    <span>Matrícula: 654321 | Turma: 7º Ano A</span>
+                </div>
+                <button class="view-button">Ver Histórico</button>
+            </li>
+            <li class="result-item">
+                <div class="student-info">
+                    <strong>Mário Henrique Souza</strong>
+                    <span>Matrícula: 987654 | Turma: 9º Ano C</span>
+                </div>
+                <button class="view-button">Ver Histórico</button>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
